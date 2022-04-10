@@ -8,10 +8,7 @@
 function reverseString() {
    // Check input
    var str = document.getElementById("userInput").value;
-   if(!str || str ==""){
-      document.getElementById('multTable').innerHTML ="Please enter a Whole number";
-	  return false;
-   }
+  
    if(!str || str.length < 1 || 
             typeof str!== 'string') {
        // alert('Please enter a valid input');
@@ -23,6 +20,11 @@ function reverseString() {
 function generateTable(){
 
    var str = document.getElementById("userInput2").value;
+   
+    if(!str || str ==""){
+      document.getElementById('multTable').innerHTML ="Please enter a Whole number";
+	  return false;
+   }
 
    if (isNaN(str)){
      document.getElementById('multTable').innerHTML ="Please enter a Whole number";
