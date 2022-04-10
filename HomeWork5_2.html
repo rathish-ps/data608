@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	 <script type='text/javascript' src='hwscript1.js'></script>
+    <!--link rel='stylesheet' href='style.css'-->
+  </head>
+  <body>
+  <h1> Part 1</h1>
+  <p>Write a function to load the presidents.csv data and display the data as an html table (you
+may use a cdv parser from any available library, though I encourage you to try the d3 one)
+</p>
+   <input type="button" value="Generate President Table" onclick="generateTable()"/>  
+
+  <div id="dvCSV"></div>
+  </br> 
+   <h1> Part 2</h1>
+   <p>Now that you have the presidents data loaded, write a function that will return that
+president’s height & weight when you type it in. This can be typed into either an input box or
+an alert box, and then print the result in a box or on the webpage
+</p>
+  <form>
+  <input id="filter_data" type="text" size="30">
+  <input type="button" value="Filter" onclick="filterData()">
+  <input type="reset" value="Clear" onclick="clearFilterData()">  
+  </form>
+  <div id="filter_result"></div>
+	
+  </body>
+</html>

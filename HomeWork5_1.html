@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<script>
+  
+// Function to reverse string
+function reverseString() {
+   // Check input
+   var str = document.getElementById("userInput").value;
+   if(!str || str.length < 1 || 
+            typeof str!== 'string') {
+       // alert('Please enter a valid input');
+	   document.getElementById('lbltipAddedComment').innerHTML ='Please enter a valid input';
+   }else 	
+      document.getElementById('lbltipAddedComment').innerHTML =  str.split('').reverse().join('')
+}
+
+function generateTable(){
+
+   var str = document.getElementById("userInput2").value;
+
+   if (isNaN(str)){
+     document.getElementById('multTable').innerHTML ="Please enter a Whole number";
+	 return false;
+   }else{
+     
+	  
+	 if (!Number.isInteger(Number(str))) {
+        document.getElementById('multTable').innerHTML ="Please enter a Whole number";
+		return false;
+     }
+	 let userInp =parseInt(str) 
+     let hw2 ="<table>"
+     
+     let currValue =0
+     for (let i = 0; i < 5; i++) {
+       hw2 +="<tr>"
+       for (let j = 0; j < 4; j++) {
+         currValue += userInp
+         hw2 += "<td>"+(currValue)+"</td>" ;
+       }
+       hw2 +="</tr>" 
+     }
+     hw2 +="</table>"
+     document.getElementById('multTable').innerHTML =hw2
+   }
+   
+  
+
+}
+  
+// Function call 
+
+</script>
+</head>
+<body>
+
+<h1>Reverse the input</h1>
+<p>Create a function to reverse any word that you type in. This can be typed into either an input
+box or an alert box, and then print the result in a box or on the webpage.</p>
+<label for="html">User Input </label>
+<input id="userInput" type=text/>
+<button type="button" onclick="reverseString()">Reverse</button>
+</br>
+<div id="emptyDiv" style="height:20px"></div>
+<label id="Reversed String">Reversed String : </label>
+<label id="lbltipAddedComment"></label>
+<h1>Generate Multiplication table</h1>
+<p>Create a function that takes an input number, and prints a table with the first 20 multiples of
+the number, in order 5x4</p>
+<input id="userInput2" type=text/>
+<button type="button" onclick="generateTable()">Generate Multiplication Table</button>
+</br>
+<p id="multTable"/>
+</body>
+</html>
+
